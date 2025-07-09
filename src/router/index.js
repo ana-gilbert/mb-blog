@@ -4,12 +4,16 @@ import Home from '/src/components/Home.vue'
 import Admin from '/src/components/Admin.vue'
 import Login from '/src/components/Login.vue'
 import Archive from '/src/components/Archive.vue'
+import PostDetail from '/src/components/PostDetail.vue'
+import ContactMe from '/src/components/ContactMe.vue'
 
 const routes = [
   { path: '/', name: 'Home', component: Home },
   { path: '/admin', name: 'Admin', component: Admin, meta: { requiresAuth: true } },
   { path: '/login', name: 'Login', component: Login },
   { path: '/archive', name: 'Archive', component: Archive },
+  { path: '/post/:id', name: 'PostDetail', component: PostDetail},
+  { path: '/contact-me', name: 'ContactMe', component: ContactMe }, 
   { path: '/:pathMatch(.*)*', redirect: '/' } // Catch-all route to redirect to Home
 ]
 
