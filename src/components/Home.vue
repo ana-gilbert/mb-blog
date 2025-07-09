@@ -1,19 +1,6 @@
 <template>
     <div class="min-h-screen bg-white text-gray-800 font-sans">
-      <!-- Navbar -->
-      <header class="bg-gray-100 shadow">
-        <div class="max-w-4xl mx-auto px-4 py-4 flex justify-between items-center">
-          <h1 class="text-2xl font-bold">Madie's Blog</h1>
-          <nav>
-            <ul class="flex gap-4 text-sm">
-              <li><a href="#" class="hover:text-blue-600">Home</a></li>
-              <li><a href="#" class="hover:text-blue-600">Posts</a></li>
-              <li><a href="#" class="hover:text-blue-600">Gallery</a></li>
-              <li><a href="#" class="hover:text-blue-600">Contact</a></li>
-            </ul>
-          </nav>
-        </div>
-      </header>
+      
   
       <!-- Hero section -->
       <section class="bg-blue-50 py-12 text-center">
@@ -22,16 +9,17 @@
       </section>
   
       <!-- Recent Posts -->
-      <main class="max-w-3xl mx-auto px-4 py-8">
-        <h3 class="text-2xl font-semibold mb-6">Latest Posts</h3>
-        <div class="space-y-6">
-          <div v-for="post in posts" :key="post.id" class="border-b pb-4">
-            <h4 class="text-xl font-medium text-blue-700">{{ post.title }}</h4>
-            <p class="text-sm text-gray-500">{{ post.date }}</p>
-            <p class="mt-2 text-gray-700">{{ post.excerpt }}</p>
-          </div>
+      <div class="max-w-3xl mx-auto py-10">
+        <h1 class="text-3xl font-bold mb-6">Latest Post</h1>
+        <div v-if="latestPost" class="border p-4 rounded shadow">
+          <h2 class="text-xl font-semibold">{{ latestPost.title }}</h2>
+          <p class="text-sm text-gray-500">{{ latestPost.date }}</p>
+          <p class="mt-2">{{ latestPost.content }}</p>
         </div>
-      </main>
+        <div v-else>
+          <p>No posts yet!</p>
+        </div>
+      </div>
   
       <!-- Footer -->
       <footer class="bg-gray-100 text-center py-4 mt-12 text-sm text-gray-500">
@@ -40,29 +28,29 @@
     </div>
   </template>
   
+
   <script setup>
-  import { ref } from 'vue'
-  
-  const posts = ref([
-    {
-      id: 1,
-      title: 'How I Found My Voice Through Writing',
-      date: 'July 7, 2025',
-      excerpt: 'Writing has been my creative outlet for years. Here’s how it helped me grow…'
-    },
-    {
-      id: 2,
-      title: 'Top 5 Beach Reads for Summer',
-      date: 'June 30, 2025',
-      excerpt: 'Whether you’re on a plane or poolside, these books are perfect companions…'
-    },
-    {
-      id: 3,
-      title: 'Photos from My Weekend Getaway',
-      date: 'June 22, 2025',
-      excerpt: 'I escaped to the coast and captured some beautiful moments. Check them out…'
+    import { ref, onMounted } from 'vue'
+    import { db } from '../firebase'
+    import { collection, query, orderBy, limit, getDocs } from 'firebase/firestore'
+    
+    const latestPost = ref(null)
+    
+    const fetchLatestPost = async () => {
+      const q = query(collection(db, 'posts'), orderBy('createdAt', 'desc'), limit(1))
+      const snapshot = await getDocs(q)
+      const doc = snapshot.docs[0]
+    
+      if (doc) {
+        latestPost.value = {
+          id: doc.id,
+          ...doc.data(),
+          date: doc.data().createdAt?.toDate().toLocaleString() || ''
+        }
+      }
     }
-  ])
+    
+    onMounted(fetchLatestPost)
   </script>
   
   <style>

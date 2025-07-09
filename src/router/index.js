@@ -3,11 +3,14 @@ import { getAuth, onAuthStateChanged } from 'firebase/auth'
 import Home from '/src/components/Home.vue'
 import Admin from '/src/components/Admin.vue'
 import Login from '/src/components/Login.vue'
+import Archive from '/src/components/Archive.vue'
 
 const routes = [
   { path: '/', name: 'Home', component: Home },
   { path: '/admin', name: 'Admin', component: Admin, meta: { requiresAuth: true } },
   { path: '/login', name: 'Login', component: Login },
+  { path: '/archive', name: 'Archive', component: Archive },
+  { path: '/:pathMatch(.*)*', redirect: '/' } // Catch-all route to redirect to Home
 ]
 
 const router = createRouter({
