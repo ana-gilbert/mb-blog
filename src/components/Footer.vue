@@ -26,6 +26,16 @@
           >
           <i class="fa-solid fa-envelope"></i>
           </a>
+
+          <!-- 🪄 Secret Icon: super subtle flower in corner -->
+          <router-link
+            to="/shhh"
+            class="cursor-pointer"
+            aria-label="secret"
+            title="shhh..."
+          >
+          <i class="fa-solid fa-user-secret text-gray-100" ></i>
+          </router-link>
         </div>
       </div>
     </footer>

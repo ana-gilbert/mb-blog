@@ -16,12 +16,13 @@
   </header>
 </template>
 
-<style>
-h1{
-  font-family: 'Amoresa';
-  color: #4A5568; /* Gray-700 */
-}
-li{
-  font-family: 'Times Condensed';
-}
+<style scoped>
+  h1{
+    font-family: 'Amoresa';
+    color: #4A5568; /* Gray-700 */
+  }
+  li{
+    font-family: 'Times Condensed';
+    font-size: larger;
+  }
 </style>

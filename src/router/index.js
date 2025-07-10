@@ -7,6 +7,7 @@ import Archive from '/src/components/Archive.vue'
 import PostDetail from '/src/components/PostDetail.vue'
 import ContactMe from '/src/components/ContactMe.vue'
 import AboutMe from '/src/components/AboutMe.vue'
+import Secrets from '/src/components/Secrets.vue'
 
 const routes = [
   { path: '/', name: 'Home', component: Home },
@@ -16,6 +17,7 @@ const routes = [
   { path: '/post/:id', name: 'PostDetail', component: PostDetail},
   { path: '/contact-me', name: 'ContactMe', component: ContactMe }, 
   { path: '/about-me', name: 'AboutMe', component: AboutMe },
+  { path : '/shhh', name: 'Secrets', component: Secrets },
   { path: '/:pathMatch(.*)*', redirect: '/' } // Catch-all route to redirect to Home
 ]
 
