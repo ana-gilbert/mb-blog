@@ -1,1 +1,17 @@
 @import "tailwindcss";
+
+@font-face {
+    font-family: 'Amoresa'; /* Give your font a unique name */
+    src: url('/src/assets/fonts/amoresa.woff2') format('woff2'); /* Path to your WOFF file */
+    font-weight: normal; /* Define the font weight */
+    font-style: normal; /* Define the font style */
+}
+
+@font-face {
+    font-family: 'Times Condensed'; /* Give your font a unique name */
+    src: url('/src/assets/fonts/timesNewRomanC.woff2') format('woff2'); /* Path to your WOFF file */
+    font-weight:normal ; /* Define the font weight */
+    font-style: normal; /* Define the font style */
+}
+
+

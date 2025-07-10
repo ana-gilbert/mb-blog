@@ -5,22 +5,24 @@
         <div class="flex space-x-4">
           <a
             href="https://www.instagram.com/madisonblithe/"
+            target="_blank"
+            rel="noopener"
             class="text-gray-600 hover:text-pink-500 transition"
           >
           <i class="fa-brands fa-instagram"></i>
           </a>
           
           <a
-            href="https://www.tiktok.com/@madiesblog"
+            href="https://www.tiktok.com/@dailylifewmadieblithe"
             target="_blank"
             rel="noopener"
-            class="text-gray-600 hover:text-black transition"
+            class="text-gray-600 hover:text-pink-500 transition"
           >
           <i class="fa-brands fa-tiktok"></i>
           </a>
           <a
             href="mailto:no-reply@madies-blog.com"
-            class="text-gray-600 hover:text-rose-500 transition"
+            class="text-gray-600 hover:text-pink-500 transition"
           >
           <i class="fa-solid fa-envelope"></i>
           </a>

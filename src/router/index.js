@@ -6,6 +6,7 @@ import Login from '/src/components/Login.vue'
 import Archive from '/src/components/Archive.vue'
 import PostDetail from '/src/components/PostDetail.vue'
 import ContactMe from '/src/components/ContactMe.vue'
+import AboutMe from '/src/components/AboutMe.vue'
 
 const routes = [
   { path: '/', name: 'Home', component: Home },
@@ -14,6 +15,7 @@ const routes = [
   { path: '/archive', name: 'Archive', component: Archive },
   { path: '/post/:id', name: 'PostDetail', component: PostDetail},
   { path: '/contact-me', name: 'ContactMe', component: ContactMe }, 
+  { path: '/about-me', name: 'AboutMe', component: AboutMe },
   { path: '/:pathMatch(.*)*', redirect: '/' } // Catch-all route to redirect to Home
 ]
 
