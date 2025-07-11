@@ -8,7 +8,7 @@
           <li><router-link to="/">Home</router-link></li>
           <li><router-link to="/about-me">About Me</router-link></li>
           <li><router-link to="/archive">Archive</router-link></li>
-          <li><a href="#" class="hover:text-blue-600">Gallery</a></li>
+          <li><router-link to="/recs">Recommendations</router-link></li>
           <li><router-link to="/contact-me">Contact Me</router-link></li>
         </ul>
       </nav>
