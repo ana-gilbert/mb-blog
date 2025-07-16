@@ -1,20 +1,36 @@
 <template>
-    <!-- Navbar -->
-  <header class="bg-gray-100 shadow">
-    <div class="max-w-4xl mx-auto px-4 py-4 flex justify-between items-center">
-      <h1 class="text-2xl font-bold">The Madison Minute</h1>
-      <nav>
-        <ul class="flex gap-4 text-sm">
-          <li><router-link to="/">Home</router-link></li>
-          <li><router-link to="/about-me">About Me</router-link></li>
-          <li><router-link to="/archive">Archive</router-link></li>
-          <li><router-link to="/recs">Recommendations</router-link></li>
-          <li><router-link to="/contact-me">Contact Me</router-link></li>
-        </ul>
-      </nav>
+  <header class="p-6 flex justify-center">
+    <div
+      class="w-full max-w-6xl bg-white shadow-md rounded-full px-8 py-7 flex items-center justify-between relative border border-rose-200"
+      style="min-height: 7.5rem;"
+    >
+      <!-- Left Navigation -->
+      <ul class="flex gap-15 text-lg text-gray-800 font-semibold items-center px-3">
+        <li><router-link to="/about-me" class="hover:text-pink-600 transition">ABOUT</router-link></li>
+        <li><router-link to="/archive" class="hover:text-pink-600 transition">ARCHIVE</router-link></li>
+      </ul>
+
+      <!-- Center Logo -->
+      <router-link to="/"><div class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
+        <img
+          src="/src/assets/images/MMlogo2.png"
+          alt="The Madison Minute"
+          class="h-26 sm:h-28 object-contain"
+        />
+      </div></router-link>
+
+      <!-- Right Navigation -->
+      <ul class="flex gap-15 text-lg text-gray-800 font-semibold items-center px-3">
+        <li><router-link to="/recs" class="hover:text-pink-600 transition">RECS</router-link></li>
+        <li><router-link to="/contact-me" class="hover:text-pink-600 transition">CONTACT</router-link></li>
+      </ul>
     </div>
   </header>
 </template>
+
+
+
+
 
 <style scoped>
   h1{
@@ -22,7 +38,13 @@
     color: #4A5568; /* Gray-700 */
   }
   li{
-    font-family: 'Times Condensed';
-    font-size: larger;
+    font-family: 'Perandory Condensed';
+    color: #6d6566;
+    font-weight:100;
+    letter-spacing: 1.5px;
+    font-size: 35px;
+  }
+  header{
+    background-color: #ffeff3; 
   }
 </style>

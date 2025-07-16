@@ -8,3 +8,9 @@ import Home from './components/Home.vue'
   <router-view />
 
 </template>
+
+<style global>
+  body{
+    background-color: #ffeff3;
+  }
+</style>
